@@ -8,8 +8,13 @@
 
 默认情况下，module.exports = {} 所以加载自定义模块是会打印一个 {}
 
+使用require()方法导入模块时，导入的结果，永远是module.exports指向的对象为准。
+
+module.exports 难记忆，可以改写为 exports
+module.exports 和 exports 指向的是同一个对象
 */
 
 const m7 = require('./7、模块化')
 console.log(m7);
+console.log(module.exports === exports);
 // console.log(module)

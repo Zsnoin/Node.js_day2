@@ -25,9 +25,28 @@ const moment = require('moment)
 */
 console.log('这是一个自定义模块,加载了7这个自定义模块');
 const uname = '张三'
+
 //向module.exports挂载一个uname属性
-module.exports.uname = '张三'
+module.exports.uname = '张大'
+
 //向module.exports挂载一个sayHello方法
 module.exports.sayHello = function(){
     console.log('Hello');
+}
+
+// 使用require()方法导入模块时，导入的结果，永远是module.exports指向的对象为准。
+//只会向外分享新对象
+module.exports = {
+    uname:'张三',
+    age:'18',
+    sayHello: function(){
+        console.log('Hello');
+    },
+    arr:[{
+        uname1:"李四",
+        age:15
+    },{
+        uname2:'王麻子',
+        age:28
+    }]
 }
