@@ -12,6 +12,22 @@ Node.js 中的模块化
 自定义模块      用户创建的每一个.js文件，都是自定义模块
 第三方模块      由第三方提供的，非自定义和官方提供的，需要自行下载
 
+加载模块
+使用强大的require()方法
+内置模块
+const fs = require('fs')
+自定义模块
+const custom = require('./custom.js')
+加载第三方模块
+const moment = require('moment)
 
-
+使用require()方法加载需要的内置模块时，会执行被加载模块中的代码
 */
+console.log('这是一个自定义模块,加载了7这个自定义模块');
+const uname = '张三'
+//向module.exports挂载一个uname属性
+module.exports.uname = '张三'
+//向module.exports挂载一个sayHello方法
+module.exports.sayHello = function(){
+    console.log('Hello');
+}
